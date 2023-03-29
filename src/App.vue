@@ -1,12 +1,15 @@
 <script>
-    import axios from 'axios';
+	import AppMain from './components/AppMain.vue'
 	export default {
 		name:'App',
+		components: {
+			AppMain,
+		},//components
 	};//export
 </script>
 
 <template>
-	prova
+	<AppMain />
 </template>
 
 <style lang="scss">
