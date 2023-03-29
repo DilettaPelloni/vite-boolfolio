@@ -6,6 +6,7 @@
 </script>
 
 <template>
+	prova
 </template>
 
 <style lang="scss">
