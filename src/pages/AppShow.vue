@@ -11,14 +11,14 @@
         methods: {
             getProject() {
                 axios.get(`http://127.0.0.1:8000/api/projects/${this.$route.params.slug}`)
-                    .then((response)=> {
-                        if(response.data.project) {
+                    .then(response => {
+                        if(response.data.success) {
                             this.project = response.data.project;
                         }
-                        // else {
-                        //     this.$router.push({name: 'not-found'});
-                        // }
-                    })
+                        else {
+                            this.$router.push({ name: 'not-found' });
+                        }
+                    });
             }, //getProject
         }, //methods
         created() {
@@ -28,7 +28,7 @@
 </script>
 
 <template>
-    <div class="container py-5 vh-100">
+    <div class="container py-5" v-if="project">
         <h1>{{ project.title }}</h1>
         <img :src="project.img_path" :alt="project.title" class="mb-3">
         <p>

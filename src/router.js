@@ -2,6 +2,7 @@ import { createRouter, createWebHistory} from 'vue-router';
 
 import AppIndex from './pages/AppIndex.vue';
 import AppShow from './pages/AppShow.vue';
+import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -15,7 +16,12 @@ const router = createRouter({
             path:'/show/:slug',
             name: 'show',
             component: AppShow
-        }
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: NotFound
+        },
     ]
 });
 
